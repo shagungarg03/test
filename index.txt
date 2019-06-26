@@ -1,0 +1,11 @@
+ Volume in drive C is OSDisk
+ Volume Serial Number is 1E1C-0C26
+
+ Directory of C:\Users\shaggarg\Desktop\code
+
+06/27/2019  01:04 AM    <DIR>          .
+06/27/2019  01:04 AM    <DIR>          ..
+06/27/2019  01:03 AM               150 helloworld.java
+06/27/2019  01:04 AM                 0 index.txt
+               2 File(s)            150 bytes
+               2 Dir(s)  333,542,547,456 bytes free
