@@ -1,0 +1,16 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Lambda function creation with python code from s3 bucket
+Resources:
+  primer:
+    Type: AWS::Lambda::Function
+    Properties:
+      Runtime: python3.6
+      Role: arn:aws:iam::316654297235:role/lambda-role
+      FunctionName: lambda-cf3
+      Handler: lambda-py-code.handler
+      Code:
+        S3Bucket: lamdba-python-code
+        S3Key: lambda-py-code.zip
+      Description: Invoke a function during stack creation.
+      TracingConfig:
+        Mode: Active
