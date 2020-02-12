@@ -6,7 +6,7 @@ Resources:
     Properties:
       Runtime: python3.6
       Role: arn:aws:iam::316654297235:role/lambda-role
-      FunctionName: lambda-cf2
+      FunctionName: lambda-cf3
       Handler: lambda-py-code.handler
       Code:
         S3Bucket: lamdba-python-code
