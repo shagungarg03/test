@@ -1,0 +1,33 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Resources:
+  S3AppBucket:
+    Type: "AWS::S3::Bucket"
+    DeletionPolicy : Retain
+    Properties:
+      BucketName: shagun-cf-bucket
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        ErrorDocument: index.html
+        IndexDocument: index.html
+  BucketPolicyApp:
+    Type: "AWS::S3::BucketPolicy"
+    Properties:
+      Bucket: !Ref S3AppBucket
+      PolicyDocument:
+        Statement:
+          -
+            Sid: "ABC123"
+            Action:
+              - "s3:GetObject"
+            Effect: Allow
+            Resource: !Join ["", ["arn:aws:s3:::", !Ref S3AppBucket, "/*"]]
+            Principal:
+              AWS:
+                - "*"
+Outputs:    
+  S3AppBucketout:
+    Description: Information about the bucket url 
+    Value: !Ref S3AppBucket
+    Export:
+      Name: !Sub "${AWS::StackName}-S3AppBucket"
